@@ -25,6 +25,15 @@ public class BasePage extends WebElementHandler {
         PageFactory.initElements(driver,this);
     }
 
+    public void highlightMethod(WebElement element){
+        jse.executeScript("arguments[0].setAttribute('style','background: yellow; border: 5px solid blue;')",element);
+    }
+    public void clickObject(WebElement element){
+        log.debug("Click perform on the object: "+element.getText());
+        highlightMethod(element);
+        element.click();
+    }
+
     public void scrollToElement(WebElement element){
         jse.executeScript("arguments[0].scrollIntoView(true);",element);
     }
