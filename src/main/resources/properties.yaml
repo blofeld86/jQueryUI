@@ -1,0 +1,12 @@
+browser: CHROME
+#browser: FIREFOX
+#browser: IE
+#browser: EDGE
+
+environments:
+  env_int:
+    active: true
+    appUrl: https://jqueryui.com/
+  env_test:
+    active: false
+    appUrl: https://jqueryui.com/
