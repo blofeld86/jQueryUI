@@ -1,4 +1,6 @@
 package page.objects;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,22 +11,13 @@ public class DraggablePage extends BasePage {
     @FindBy(id = "draggable")
     private WebElement draggable;
 
-    @FindBy(id = "droppable")
-    private WebElement droppable;
-
-    @FindBy(css = "#droppable p")
-    private WebElement infoResult;
-
-
-    private static String result;
-    public static String getResult(){ return result;}
 
     public DraggablePage(WebDriver driver) { super(driver);}
 
-    public DraggablePage moveElementToDroppable(){
+    @Step("Moving draggable element")
+    public DraggablePage moveElement(){
         switchToFrameByIndex(0);
-        moveElementToElement(draggable, droppable);
-        result = infoResult.getText();
+        moveElementByOffSet(draggable, 50,50);
         return this;
     }
 }

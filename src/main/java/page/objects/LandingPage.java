@@ -1,5 +1,5 @@
 package page.objects;
-
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,9 +23,24 @@ public class LandingPage extends BasePage {
 
     public LandingPage(WebDriver driver) { super(driver);}
 
+    @Step("Opening draggable page")
     public DraggablePage openDraggable(){
-        getWait().until(ExpectedConditions.elementToBeClickable(interactions.get(1)));
-        interactions.get(1).click();
+        getWait().until(ExpectedConditions.elementToBeClickable(interactions.get(0)));
+        clickObject(interactions.get(0));
         return new DraggablePage(driver);
+    }
+
+    @Step("Opening droppable page")
+    public DroppablePage openDroppable(){
+        getWait().until(ExpectedConditions.elementToBeClickable(interactions.get(1)));
+        clickObject(interactions.get(1));
+        return new DroppablePage(driver);
+    }
+
+    @Step("Opening resizable page")
+    public ResizablePage openResizable(){
+        getWait().until(ExpectedConditions.elementToBeClickable(interactions.get(2)));
+        clickObject(interactions.get(2));
+        return new ResizablePage(driver);
     }
 }

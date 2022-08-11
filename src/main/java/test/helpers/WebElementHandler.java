@@ -57,4 +57,7 @@ public class WebElementHandler {
         getActions().clickAndHold(element).moveToElement(element2).release().perform();
     }
 
+    public void moveElementByOffSet(WebElement element, int x, int y){
+        getActions().clickAndHold(element).moveByOffset(x,y).release().perform();
+    }
 }
