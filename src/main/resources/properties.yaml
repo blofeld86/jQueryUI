@@ -7,6 +7,7 @@ environments:
   env_int:
     active: true
     appUrl: https://jqueryui.com/
+    droppableInfo: Dropped!
   env_test:
     active: false
     appUrl: https://jqueryui.com/

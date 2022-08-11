@@ -37,4 +37,8 @@ public class BasePage extends WebElementHandler {
     public void scrollToElement(WebElement element){
         jse.executeScript("arguments[0].scrollIntoView(true);",element);
     }
+
+    public void switchToFrameByElement(WebElement element){driver.switchTo().frame(element);}
+
+    public void switchToFrameByIndex(int x){driver.switchTo().frame(x);}
 }

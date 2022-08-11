@@ -53,5 +53,8 @@ public class WebElementHandler {
         log.info("Successfully switched and closed previous window");
     }
 
+    public void moveElementToElement(WebElement element, WebElement element2){
+        getActions().clickAndHold(element).moveToElement(element2).release().perform();
+    }
 
 }
